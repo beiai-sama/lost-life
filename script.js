@@ -38,7 +38,7 @@ if (!input || !result) return;
 
 const value = input.value.trim().toLowerCase();
 
-if (value === "teto31") {
+if (value === "teto31life") {
 result.textContent = "密钥正确。正在修复 Beiai.exe...";
 setTimeout(() => {
 openWindow("final");
@@ -62,6 +62,19 @@ const h = String(now.getHours()).padStart(2, "0");
 const m = String(now.getMinutes()).padStart(2, "0");
 
 clock.textContent = `${h}:${m}`;
+}
+
+function selectProject(name, text) {
+const projectName = document.getElementById("flProjectName");
+const statusText = document.getElementById("flStatusText");
+
+if (projectName) {
+projectName.textContent = name;
+}
+
+if (statusText) {
+statusText.textContent = text;
+}
 }
 
 setInterval(updateClock, 1000);
