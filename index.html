@@ -38,6 +38,11 @@
   <div class="icon-img">🎵</div>
   <div class="icon-text">未命名工程</div>
 </button>
+
+<button class="icon" onclick="openWindow('flstudio')">
+  <div class="icon-img">🍊</div>
+  <div class="icon-text">FL Studio 21</div>
+</button>
 ```
 
   </div>
@@ -52,7 +57,8 @@
       <p>欢迎来到这个已经损坏的桌面。</p>
       <p>这里看起来像一台普通电脑，但某些文件夹里藏着修复 Beiai.exe 的线索。</p>
       <p>提示：不要相信桌面上的每一个文件名。</p>
-      <p class="hint">第一枚碎片：答案可能藏在“不要打开”里。</p>
+      <p class="hint">第一枚碎片和第二枚碎片可能藏在“不要打开”里。</p>
+      <p class="hint">第三枚碎片似乎藏在某个未完成的 FL 工程中。</p>
     </div>
   </div>
 
@@ -84,7 +90,8 @@
       <p>[repair_key.log]</p>
       <p>KEY_FRAGMENT_01 = TETO</p>
       <p>KEY_FRAGMENT_02 = 31</p>
-      <p>把碎片拼起来，也许能启动某个程序。</p>
+      <p>还有一枚碎片不在这里。</p>
+      <p>去找那个最像工程坟场的东西。</p>
     </div>
   </div>
 
@@ -96,7 +103,8 @@
     <div class="window-body terminal-text">
       <p>BEIAI.EXE 修复程序</p>
       <p>状态：活人微死</p>
-      <p>请输入修复密钥：</p>
+      <p>检测到修复密钥由三枚碎片组成。</p>
+      <p>请输入完整修复密钥：</p>
 
 ```
   <div class="input-line">
@@ -133,6 +141,130 @@
 
   </div>
 
+  <div id="flstudio" class="window fl-window">
+    <div class="window-title fl-title">
+      <span>FL Studio 21 - 未完成工程管理器</span>
+      <button onclick="closeWindow('flstudio')">×</button>
+    </div>
+
+```
+<div class="fl-app">
+
+  <div class="fl-topbar">
+    <div class="fl-transport">
+      <span class="fl-pat">PAT</span>
+      <span class="fl-play">▶</span>
+      <span class="fl-stop">■</span>
+      <span class="fl-rec">●</span>
+      <span class="fl-bpm">130.000</span>
+    </div>
+
+    <div class="fl-time">0:00:00</div>
+
+    <div class="fl-menu">
+      文件　编辑　添加　样式　视图　选项　工具　帮助
+    </div>
+  </div>
+
+  <div class="fl-toolbar">
+    <span>▣</span><span>◉</span><span>◌</span><span>▥</span><span>▤</span>
+    <span>✂</span><span>📋</span><span>🔗</span><span>🎹</span><span>🎚</span>
+    <span class="fl-warning">工程未保存</span>
+  </div>
+
+  <div class="fl-main">
+
+    <div class="fl-browser">
+      <div class="fl-browser-title">Browser</div>
+
+      <div class="fl-folder">▸ Current project</div>
+      <div class="fl-folder">▸ Plugin database</div>
+      <div class="fl-folder">▾ Unfinished Projects</div>
+
+      <button class="fl-project" onclick="selectProject('未命名工程_最终版_真最终版.flp', '缺少插件：OTT、ValhallaRoom、理智模块.dll')">
+        未命名工程_最终版_真最终版.flp
+      </button>
+
+      <button class="fl-project" onclick="selectProject('teto_cache_31.flp', '检测到重音テト缓存。工程可以打开，但会精神污染。')">
+        teto_cache_31.flp
+      </button>
+
+      <button class="fl-project" onclick="selectProject('luotianyi_memory.zip.flp', '洛天依工程残片：和声轨道丢失，歌词轨道仍在发光。')">
+        luotianyi_memory.zip.flp
+      </button>
+
+      <button class="fl-project" onclick="selectProject('lost-life_theme_demo.flp', '疑似本网页BGM工程。播放时会暴露下一枚线索。')">
+        lost-life_theme_demo.flp
+      </button>
+
+      <button class="fl-project" onclick="selectProject('不要打开_真的不要打开.flp', '你打开了。KEY_FRAGMENT_03 = LIFE')">
+        不要打开_真的不要打开.flp
+      </button>
+    </div>
+
+    <div class="fl-playlist">
+
+      <div class="fl-playlist-head">
+        <span>Playlist - Arrangement</span>
+        <span id="flProjectName">样式 1</span>
+      </div>
+
+      <div class="fl-ruler">
+        <span>1</span><span>2</span><span>3</span><span>4</span>
+        <span>5</span><span>6</span><span>7</span><span>8</span>
+        <span>9</span><span>10</span><span>11</span><span>12</span>
+        <span>13</span><span>14</span><span>15</span><span>16</span>
+      </div>
+
+      <div class="fl-tracks">
+        <div class="fl-track-name">Track 1</div>
+        <div class="fl-track-grid">
+          <div class="fl-clip clip-a">piano_idea.wav</div>
+        </div>
+
+        <div class="fl-track-name">Track 2</div>
+        <div class="fl-track-grid">
+          <div class="fl-clip clip-b">vocal_teto</div>
+        </div>
+
+        <div class="fl-track-name">Track 3</div>
+        <div class="fl-track-grid"></div>
+
+        <div class="fl-track-name">Track 4</div>
+        <div class="fl-track-grid">
+          <div class="fl-clip clip-c">lyrics_final.txt</div>
+        </div>
+
+        <div class="fl-track-name">Track 5</div>
+        <div class="fl-track-grid"></div>
+
+        <div class="fl-track-name">Track 6</div>
+        <div class="fl-track-grid"></div>
+
+        <div class="fl-track-name">Track 7</div>
+        <div class="fl-track-grid"></div>
+
+        <div class="fl-track-name">Track 8</div>
+        <div class="fl-track-grid"></div>
+      </div>
+
+      <div class="fl-status">
+        <div id="flStatusText">
+          请选择左侧未完成工程。
+        </div>
+
+        <div class="fl-secret">
+          提示：有一个工程会吐出新的 KEY_FRAGMENT。
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+```
+
+  </div>
+
   <div id="final" class="window final-window">
     <div class="window-title danger">
       <span>修复完成</span>
@@ -152,6 +284,7 @@
     <button onclick="openWindow('readme')">📄 README</button>
     <button onclick="openWindow('terminal')">💻 北艾.exe</button>
     <button onclick="openWindow('music')">🎵 未命名工程</button>
+    <button onclick="openWindow('flstudio')">🍊 FL Studio 21</button>
     <button onclick="fakeShutdown()">⏻ 关机</button>
   </div>
 
