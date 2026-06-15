@@ -572,3 +572,14 @@ left: 5vw;
 transform: none;
 }
 }
+.window-title {
+cursor: move;
+}
+
+.window-title button {
+cursor: pointer;
+}
+
+.dragging {
+user-select: none;
+}
