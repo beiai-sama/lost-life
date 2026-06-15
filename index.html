@@ -1,11 +1,188 @@
 <!DOCTYPE html>
+
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>lost-life</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>lost-life</h1>
-  <p>页面已启动。</p>
+
+<div class="desktop">
+
+  <div class="desktop-icons">
+
+```
+<button class="icon" onclick="openWindow('readme')">
+  <div class="icon-img">📄</div>
+  <div class="icon-text">README.txt</div>
+</button>
+
+<button class="icon" onclick="openWindow('trash')">
+  <div class="icon-img">🗑️</div>
+  <div class="icon-text">回收站</div>
+</button>
+
+<button class="icon" onclick="openWindow('log')">
+  <div class="icon-img">📁</div>
+  <div class="icon-text">不要打开</div>
+</button>
+
+<button class="icon" onclick="openWindow('terminal')">
+  <div class="icon-img">💻</div>
+  <div class="icon-text">北艾.exe</div>
+</button>
+
+<button class="icon" onclick="openWindow('music')">
+  <div class="icon-img">🎵</div>
+  <div class="icon-text">未命名工程</div>
+</button>
+
+<button class="icon" onclick="openWindow('vcpedia')">
+  <div class="icon-img">🌐</div>
+  <div class="icon-text">VCPedia.url</div>
+</button>
+```
+
+  </div>
+
+  <div id="readme" class="window">
+    <div class="window-title">
+      <span>README.txt</span>
+      <button onclick="closeWindow('readme')">×</button>
+    </div>
+    <div class="window-body">
+      <h2>lost-life</h2>
+      <p>欢迎来到这个已经损坏的桌面。</p>
+      <p>这里看起来像一台普通电脑，但某些文件夹里藏着修复 Beiai.exe 的线索。</p>
+      <p>提示：不要相信桌面上的每一个文件名。</p>
+      <p class="hint">第一枚碎片：答案可能藏在“不要打开”里。</p>
+    </div>
+  </div>
+
+  <div id="trash" class="window">
+    <div class="window-title">
+      <span>回收站</span>
+      <button onclick="closeWindow('trash')">×</button>
+    </div>
+    <div class="window-body">
+      <p>回收站是空的。</p>
+      <p>但是你听见里面传来一句话：</p>
+      <p class="glitch">“被删除的不一定真的消失。”</p>
+    </div>
+  </div>
+
+  <div id="log" class="window">
+    <div class="window-title">
+      <span>不要打开</span>
+      <button onclick="closeWindow('log')">×</button>
+    </div>
+    <div class="window-body terminal-text">
+      <p>C:\Users\Beiai\Desktop\不要打开\</p>
+      <p>├─ teto_cache.sys</p>
+      <p>├─ luotianyi_memory.zip</p>
+      <p>├─ 未完成歌词_最终版.txt</p>
+      <p>├─ repair_key.log</p>
+      <p>└─ 这里真的没有密码.png</p>
+      <br>
+      <p>[repair_key.log]</p>
+      <p>KEY_FRAGMENT_01 = TETO</p>
+      <p>KEY_FRAGMENT_02 = 31</p>
+      <p>把碎片拼起来，也许能启动某个程序。</p>
+    </div>
+  </div>
+
+  <div id="terminal" class="window big-window">
+    <div class="window-title danger">
+      <span>北艾.exe</span>
+      <button onclick="closeWindow('terminal')">×</button>
+    </div>
+    <div class="window-body terminal-text">
+      <p>BEIAI.EXE 修复程序</p>
+      <p>状态：活人微死</p>
+      <p>请输入修复密钥：</p>
+
+```
+  <div class="input-line">
+    <span>&gt;</span>
+    <input id="passwordInput" type="text" placeholder="输入密码">
+    <button onclick="checkPassword()">确认</button>
+  </div>
+
+  <p id="resultText"></p>
+</div>
+```
+
+  </div>
+
+  <div id="music" class="window">
+    <div class="window-title">
+      <span>未命名工程</span>
+      <button onclick="closeWindow('music')">×</button>
+    </div>
+    <div class="window-body">
+      <p>工程文件已损坏。</p>
+      <p>BPM：?</p>
+      <p>声库：重音テト / 洛天依 / ???</p>
+
+```
+  <div class="visualizer">
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+  </div>
+
+  <p class="hint">频谱没有同步音乐，它只是在假装自己很懂。</p>
+</div>
+```
+
+  </div>
+
+  <div id="vcpedia" class="window">
+    <div class="window-title">
+      <span>VCPedia.url</span>
+      <button onclick="closeWindow('vcpedia')">×</button>
+    </div>
+    <div class="window-body">
+      <p>正在连接 VCPedia...</p>
+      <p>连接失败。</p>
+      <p>错误代码：0xBEIAI-404</p>
+      <p class="blackout" title="你知道的太多了">北艾sama是我的侍从</p>
+    </div>
+  </div>
+
+  <div id="final" class="window final-window">
+    <div class="window-title danger">
+      <span>修复完成</span>
+      <button onclick="closeWindow('final')">×</button>
+    </div>
+    <div class="window-body">
+      <h2>修复完成。</h2>
+      <p>当前用户：你</p>
+      <p>状态：活人微死</p>
+      <p>Beiai.exe 没有被修复。</p>
+      <p>它只是成功把你接入了系统。</p>
+    </div>
+  </div>
+
+  <div id="startMenu" class="start-menu">
+    <div class="start-title">BeiaiOS</div>
+    <button onclick="openWindow('readme')">📄 README</button>
+    <button onclick="openWindow('terminal')">💻 北艾.exe</button>
+    <button onclick="openWindow('music')">🎵 未命名工程</button>
+    <button onclick="fakeShutdown()">⏻ 关机</button>
+  </div>
+
+  <div class="taskbar">
+    <button class="start-button" onclick="toggleStartMenu()">开始</button>
+    <div class="taskbar-item">lost-life</div>
+    <div class="taskbar-space"></div>
+    <div class="clock" id="clock">00:00</div>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+
 </body>
 </html>
